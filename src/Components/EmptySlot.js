@@ -1,12 +1,21 @@
-// Just one example
-import Mole from './Mole'
-import MoleContainer from './MoleContainer'
+import { useEffect } from 'react'
+import MoleHill from '../molehill.png'
 
-function EmptySlot(props){
+// declare useEffect
+const EmptySlot = (props) => {
+
+    // define seconds, timer with setTimeout, props, clearTimeout
+    useEffect(() => {
+        let randSeconds = Math.ceil(Math.random() * 5000)
+        let timer = setTimeout(() => {
+            props.toggle(true)
+        }, randSeconds)
+        return () => clearTimeout(timer)
+    })
+
     return (
         <div>
-            <h2> Empty Slot </h2>
-            <Mole />
+            <img style={{'width': '20vw'}} src={MoleHill} />
         </div>
     )
 }

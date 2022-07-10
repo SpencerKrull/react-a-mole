@@ -5,6 +5,7 @@ import MoleContainer from './Components/MoleContainer'
 function App(){
     let [score, setScore] = useState(0)
 
+    // declare function, w/ empty array, for loop, key, score, setScore
     const createMoleHill = () => {
         let hills = []
         for (let i = 0; i < 9; i++) {
